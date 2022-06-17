@@ -1,0 +1,1 @@
+export const index = () => console.log("首页完成了");
