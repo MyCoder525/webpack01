@@ -23,3 +23,9 @@ document.body.appendChild(gif)
 document.body.appendChild(png)
 
 import "./assets/fonts/iconfont.css"
+
+const fn = () => {
+    console.log("hallo");
+}
+
+fn()
