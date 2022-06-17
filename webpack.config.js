@@ -1,4 +1,5 @@
 const { join } = require('path')
+const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -12,7 +13,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: join(__dirname, "public/index.html")
-        })
+
+        }),
+        new VueLoaderPlugin()
     ],
     devServer: {
         open: true,
@@ -29,6 +32,13 @@ module.exports = {
                 use: ["style-loader", "css-loader", "less-loader"]
             },
             {
+                test: /\.js$/i,
+                use: ['babel-loader']
+            }, {
+                test: /\.vue$/i,
+                use: ["vue-loader"]
+            },
+            {
                 test: /\.(png|jpg|gif)$/i,
                 //默认8kb
                 type: 'asset',
@@ -42,11 +52,8 @@ module.exports = {
                 generator: {
                     filename: 'fonts/[hash:6][ext]'
                 }
-            },
-            {
-                test: /\.js$/i,
-                use: ['babel-loader']
             }
         ]
+
     }
 }
