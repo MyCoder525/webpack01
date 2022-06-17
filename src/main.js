@@ -1,5 +1,7 @@
 import { index } from './index.js'
 import { list } from './list.js'
+
+
 index()
 list()
 
@@ -18,7 +20,9 @@ png.src = pngSrc
 
 document.body.appendChild(gif)
 document.body.appendChild(png)
+
 import "./assets/fonts/iconfont.css"
+
 
 const fn = () => {
     console.log("hallo");
@@ -26,4 +30,6 @@ const fn = () => {
 
 fn()
 
-import App from './App.vue'
+// import App from './app.vue'
+
+
