@@ -18,4 +18,12 @@ module.exports = {
         open: true,
         port: 999
     },
+    module: {
+        rules: [
+            {
+                test: /\.css/i,
+                use: ["style-loader", "css-loader"]
+            },
+        ]
+    }
 }
