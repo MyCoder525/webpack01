@@ -28,6 +28,14 @@ module.exports = {
                 test: /\.less/i,
                 use: ["style-loader", "css-loader", "less-loader"]
             },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                //默认8kb
+                type: 'asset',
+                generator: {
+                    filename: 'Images/[hash:6][ext]'
+                }
+            },
         ]
     }
 }
