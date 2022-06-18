@@ -1,6 +1,7 @@
 const { join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const EslintWebpackPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
     mode: "development",
@@ -15,7 +16,11 @@ module.exports = {
             template: join(__dirname, "public/index.html")
 
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new EslintWebpackPlugin({
+            //要检查哪个文件夹的代码
+            context: join(__dirname, "src/")
+        })
     ],
     devServer: {
         open: true,

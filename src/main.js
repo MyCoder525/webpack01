@@ -30,6 +30,9 @@ const fn = () => {
 
 fn()
 
+// var a = 123 
+// 配置过后不支持es5
+
 import App from './app.vue'
 console.log(App);
 
