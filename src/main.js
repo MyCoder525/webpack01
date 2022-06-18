@@ -37,3 +37,4 @@ import App from './app.vue'
 console.log(App);
 
 
+import "./styles/index.css";

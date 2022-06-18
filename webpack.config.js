@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const EslintWebpackPlugin = require('eslint-webpack-plugin')
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     mode: "development",
     entry: "./src/main.js",
@@ -20,7 +21,8 @@ module.exports = {
         new EslintWebpackPlugin({
             //要检查哪个文件夹的代码
             context: join(__dirname, "src/")
-        })
+        }),
+        new MiniCssExtractPlugin()
     ],
     devServer: {
         open: true,
@@ -30,7 +32,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css/i,
-                use: ["style-loader", "css-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             },
             {
                 test: /\.less/i,
@@ -57,7 +59,8 @@ module.exports = {
             }, {
                 test: /\.vue$/i,
                 use: ["vue-loader"]
-            }
+            },
+
         ]
 
     }
