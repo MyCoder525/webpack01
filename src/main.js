@@ -30,6 +30,7 @@ const fn = () => {
 
 fn()
 
-// import App from './app.vue'
+import App from './app.vue'
+console.log(App);
 
 
